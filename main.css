@@ -1,0 +1,204 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+/*animations*/
+@keyframes fadein{
+    from {background-color: white;}
+    to {background-color: lightgrey;}
+}
+/*the above and below animations are used to change colours fading from white to grey and grey to white*/
+@keyframes fadeout {
+    from {background-color: #d3d3d3;}
+    to {background-color: white;}
+}
+
+@keyframes enlarge{
+    from {padding: 50px 40px;}
+    to {padding: 100px 80px;}
+}
+/*the above and below animations are used to change the size of the 'block' class (a side effect is changing the position of other elements on the same line)*/
+@keyframes smoll{
+    from {padding: 100px 80px;}
+    to {padding: 50px 40px;}
+}
+
+@keyframes slowtransition{ /*this is the animation seen on the header, it is just for a vibe and doesn't really serve any purpose*/
+    from{background-image: url('https://m.media-amazon.com/images/I/81hC3W6jCVL.jpg');}
+    to{background-image: url('https://m.media-amazon.com/images/I/81+0uvn+y+L.jpg');}
+}
+
+/*main settings*/
+html, body{ /*the below settings are to remove any whitespace that might occur above, below, left and right of the website*/
+    margin: 0;
+    padding: 0;
+    max-width: 1; /*the width will be set to exactly whatever the chrome width is set to*/
+    max-height: 1; /*the height will be set to exactly whatever the chrome height is set to*/
+    background-color: white;
+    font-family: Roboto; /*the font type*/
+    text-align: center
+}
+
+.navbar{
+    height: 88px;
+    background-color: white;
+    width: 1;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#logo{
+    text-align: left;
+    font-size: 24px;
+    display: inline-block;
+}
+
+.button, a{ /*the buttons in the navigation bar*/
+    animation-name: fadeout; /*calls the animation and runs the duration*/
+    animation-duration: 0.42s;
+    background-color: white;
+    text-decoration: none; /*removes the links underline*/
+    color: black; /*sets the colour of the font*/
+    display: inline-block; /*sets so that any element will not go beneath or above another element but rather co-exist on the same horizontal axis*/
+    padding: 5px 10px; /*the space set between the border and the element*/
+    margin: 10px 25px; /*the space set beyond the border*/
+    border-radius: 5px; /*the curve the border has*/
+    font-size: 16px; /*size of the font*/
+    font-weight: bold; /*if the weight is bold, bolder or none*/
+    text-align: center; /*aligns all elements inside the class/division into the center*/
+    a:hover{
+    animation-name: fadein; /*calls the animation ONLY if the button is getting touched by the mouse and runs the duration*/
+    animation-duration: 0.35s;
+    background-color: lightgrey;
+    }
+}
+
+/*index.html*/
+header{
+    animation-name: slowtransition; /*calls the animation*/
+    animation-timing-function: ease-in-out; /*how the animation will transition*/
+    animation-duration: 4s; /*duration it takes for the animation to finish*/
+    animation-iteration-count: infinite; /*the amount of loops it runs*/
+    background-size: cover; /*covers the whole header with the images without stretching or altering image properties (however it will not show the entire image)*/
+    animation-direction: alternate; /*this is so the animation will run in reverse after every animation ends*/
+    height: auto;
+    width: 1;
+    height: auto;
+    padding: 150px;
+    text-align: center;
+    color: white;
+    h1{ /*declaring an element inside of a parent will ONLY affect THAT element and no other. (e.g other 'h1's will not be affected by rulesets here)*/
+        font-size: 78px;
+    }
+    p{
+        font-size: 24px;
+    }
+}
+
+.Why{
+    margin-top: 25px;
+    text-align: left;
+    margin: 100px;
+    h2{
+        padding: 50px 50px 10px 50px;
+        font-size: 54px;
+    }
+    p{
+        padding: 10px 100px 50px 50px;
+        font-size: 36px;
+        text-align: center;
+    }
+}
+
+/*content.html*/
+.blocks{
+    animation-name: smoll;
+    animation-duration: 0.65s;
+    color: yellowgreen;
+    text-decoration: none;
+    display: inline-block;
+    margin: 30px;
+    padding: 50px 40px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    background-size: 125%
+}
+
+.blocks:hover{
+    animation-name: enlarge;
+    animation-duration: 0.48s;
+    padding: 100px 80px;
+}
+
+.Gcontent{
+    text-align: center;
+    h2{
+        margin-left: 40px;
+    }
+}
+
+/*genres*/
+iframe{
+    border-radius: 10px;
+    background-color: lightgrey;
+    padding: 20px;
+    margin: 50px;
+}
+
+.no1{
+    text-align: center;
+    margin: 50px;
+    img{
+        width: 20%;
+        height: 20%;
+        display: inline-block;
+    }
+    p{
+        font-size: 24px;
+        margin: 0 200px;
+    }
+}
+table{
+    font-family: Roboto; 
+    font-size: 24px;
+    margin: 150px;
+    text-align: center;
+    img{
+        width: 80px;
+        height: 100px;
+    }
+}
+th, td{
+    border-bottom: 1px solid black;
+    padding: 5px;
+    width: auto;
+}
+
+/*Resources*/
+.resources{
+    margin: 100px;
+    text-align: left;
+    h2{
+        font-size: 64px;
+    }
+    h3{
+        font-size: 48px;
+    }
+    a{
+        font-size: 36px;
+        text-decoration: underline; /*the link will have underlines*/
+        color: blue;
+        display: inline-block;
+        background-color: rgba(0, 0, 0, 0); /*rgba includes an extra value that determines the transparency of the color*/
+        text-align: left;
+    }
+}
+.chunks{
+    display: block; /*elements will be placed below or above other elements and won't co-exist with anything on the same line (any ruleset even with inline-block will no co-exist on the same line*/
+    text-align: left;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 50px;
+    margin: 50px;
+}
